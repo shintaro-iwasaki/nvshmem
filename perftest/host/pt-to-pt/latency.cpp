@@ -131,7 +131,8 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    data_d = (char *)nvshmem_malloc(max_msg_size);
+    // data_d = (char *)nvshmem_malloc(max_msg_size);
+    data_d = (char *)malloc(max_msg_size);
     CUDA_CHECK(cudaMemset(data_d, 0, max_msg_size));
 
     data_h_local = (double *)malloc(sizeof(double));
